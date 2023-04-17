@@ -11,14 +11,52 @@ function examTwo(first, second, third) {
     "number" === typeof second &&
     "number" === typeof third
   ) {
-    return first * second * third
+    return first * second * third;
   } else {
     return "문자열 데이터를 입력하셨습니다.";
   }
 }
-function examThree(str) {}
-function examFour(array) {}
-function examFive(array) {}
+function examThree(str) {
+  if ("string" === typeof str) {
+    let test = 0;
+    for (let i = 0; i < [...str].length; i++) {
+      test++;
+    }
+    return test;
+  } else return "숫자를 입력하셨습니다.";
+}
+function examFour(array) {
+  // ! 반복문을 활용 하여 최솟값 찾기
+  //   let min = array[0];
+  //  for(let i = 1; i < array.length;i++){
+  //   if(array[i] < min){
+  //     min = array[i];
+  //   }
+  //  }
+  //  return min;
+
+  // ? 자바스크립트 방법으로 최솟값 찾기
+  if ("object" === typeof array) {
+    let min = Math.min(...array);
+    return min;
+  }
+}
+
+function examFive(array) {
+  if ("object" === typeof array) {
+    // ! 반복문을 활용 하여 배열 인덱스값 더하기
+    //   let sum = 0;
+    //   for (let i = 0; i < array.length; i++) {
+    //     sum += array[i];
+    //   }
+    //   return sum;
+    // ? 자바스크립트 방식으로 구하기
+    let sum = array.reduce(function(a,b){
+      return a+b;
+    })
+    return sum;
+  }
+}
 
 console.log(examOne("2", 1));
 // ! 덧셈 로직 만들기
