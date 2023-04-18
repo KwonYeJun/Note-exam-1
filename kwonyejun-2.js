@@ -51,19 +51,34 @@ let test = {
   b:[3,4]
 }
 
+// function exampleFour(object) {
+//   let value = true;
+//   for (let key in object) {
+//     // ! 숫자인지 확인 하는 로직
+//     if (typeof object[key] === "object") {
+//       for (let i = 0; i < object[key].length; i++) {
+//         if (typeof object[key][i] === "number") {
+//           value = exampleThree(object);
+//         }
+//       }
+//     }
+//   }
+//   return value; // 블린 타입으로 변환
+//   // return value;
+// }
+
 function exampleFour(object) {
-  let value = true;
+  let value;
+  if (typeof object === "object") {
+
   for (let key in object) {
     // ! 숫자인지 확인 하는 로직
-    if (typeof object[key] === "object") {
-      for (let i = 0; i < object[key].length; i++) {
-        if (typeof object[key][i] === "number") {
+        if (typeof object[key] === "number") {
           value = exampleThree(object);
         }
       }
     }
-  }
-  return value; // 블린 타입으로 변환
+  return Boolean(value) ; // 블린 타입으로 변환
   // return value;
 }
 
@@ -73,7 +88,7 @@ function exampleFive(objectOne, objectTwo) {
   let One = exampleFour(objectOne);
   let Two = exampleFour(objectTwo);
   value = One + Two;
-  return One;
+  return   value;
 }
 
 const { count, min, max } = basicData; // 객체 디스트럭처링
