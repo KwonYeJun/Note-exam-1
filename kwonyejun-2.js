@@ -25,15 +25,18 @@ function exampleTwo(array, divideNumber) {
   };
 
   for(let i =0; i< array.length; i++){
+
     if(array[i] > divideNumber){
       exampleJObject.a = Number(array[i]);
+      // ! 값을 넘겼을 때 스트링인걸 확인 하였다.
+      // ! Four()함수 로직에 맞게 타입을 넘버로 바꾸어 주었다.
     }
     else{
       exampleJObject.b = Number(array[i]);
 
     }
-  }
-
+  
+}
   return exampleJObject;
 }
 function exampleFour(array) {
@@ -51,7 +54,7 @@ function exampleFive(objectOne, objectTwo) {
   let One = exampleFour(objectOne);
   let Two = exampleFour(objectTwo);
   value =  One + Two;
-  return "One " +'+'+' Two' +' = '+ value;
+  return  value;
 }
 
 const { count, min, max } = basicData; // 객체 디스트럭처링
