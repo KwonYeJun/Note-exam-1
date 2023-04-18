@@ -20,7 +20,18 @@ function exampleTwo(array, divideNumber) {
     a: [],
     b: [],
   };
-  return exampleJObject;
+
+  for(let i =0; i< array.length; i++){
+    if(array[i] > divideNumber){
+      exampleJObject.a = array[i];
+    }
+    else{
+      exampleJObject.b = array[i];
+
+    }
+  }
+
+  return  exampleJObject;
 }
 function exampleFour(array) {
   let value = 0;
@@ -37,13 +48,15 @@ function exampleFive(objectOne, objectTwo) {
   let One = exampleFour(objectOne);
   let Two = exampleFour(objectTwo);
 
-  return One;
+  return Two;
 }
 
 const { count, min, max } = basicData; // 객체 디스트럭처링
 const result = exampleOne(count, min, max);
-console.log(result);
+// console.log(result);
 
 // console.log(basicData.basicDataKeys[1]);
 // console.log(exampleFive(basicData, exampleTwo(result, basicData.divideNumber)));
-console.log(exampleFour(basicData));
+// console.log(exampleFive(basicData, exampleTwo(result, basicData.divideNumber)));
+
+console.log(exampleTwo(result,basicData.divideNumber))
