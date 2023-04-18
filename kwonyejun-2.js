@@ -2,30 +2,29 @@ let basicData = {
   count: 3,
   min: 1,
   max: 10,
-
 };
 
 function exampleOne(count, min, max) {
   let exampleArr = [];
-for(let i=0; i< count; i++){
-  const randomNumber = Math.floor(Math.random() * max) + min;
-exampleArr[i] = randomNumber;
-}
+  for (let i = 0; i < count; i++) {
+    const randomNumber = (Math.random() * (max - min)) + min;
+    exampleArr[i] = randomNumber.toFixed(2);
+  }
   return exampleArr;
 }
 
-function exampleTwo(array, divideNumber){
-  let exampleJObject ={
+function exampleTwo(array, divideNumber) {
+  let exampleJObject = {
     a: [],
-    b: []
-  }
+    b: [],
+  };
   return exampleJObject;
 }
-function exampleFour(array){
+function exampleFour(array) {
   let value;
   return value;
 }
-function exampleFive(objectOne, objectTwo){
+function exampleFive(objectOne, objectTwo) {
   let value;
   return value;
 }
@@ -35,4 +34,4 @@ const result = exampleOne(count, min, max);
 console.log(result);
 
 // console.log(basicData.basicDataKeys[1]);
-console.log(exampleFive(basicData, exampleTwo()));
+// console.log(exampleFive(basicData, exampleTwo()));
