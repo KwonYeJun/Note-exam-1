@@ -26,6 +26,7 @@ function exampleOne(inputPrice,currency,basicData) {
     case 1000:
       console.log(currency.thousand.name,'일천원권을 넣었습니다.');
   }
+  
 // Q 만약 inputPrice가 1000이면 currency.thousand.name을 반환하여 "일천원권을 넣었습니다."라는문구를 console.log로 출력한다.
 
 // Q 만약 inputPrice가 1000원일 때, basicData를 통해 구매 가능한 제품을 콘솔
