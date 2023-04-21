@@ -66,6 +66,8 @@ function exampleTree(array, functionOne, functionTwo) {
   // 비교한 작은 값은 arrayResult의 원속배열의 0번째
   //큰 값은 arrayResult의 원소배열의 1번째에 넣어준다.
 
+// ! sort() 메소드를 활용해 보자.
+
   let arryResult = [[,], [,], [,], [,]];
   let test = 0;
 
