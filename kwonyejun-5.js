@@ -67,12 +67,12 @@ else if(inputPrice > gptlist){
     testprice.push(test.price);
   });
   let minPrice = Math.min.apply(null, testprice);
-  let manxPrice = Math.max.apply(null, testprice);
+  let maxPrice = Math.max.apply(null, testprice);
   if(minPrice > inputPrice){
 
     console.log("잔액이 부족합니다.");
   }
-  else if(manxPrice < inputPrice){
+  else if(maxPrice < inputPrice){
     console.log("와 돈 많으시다...");
   }
   
