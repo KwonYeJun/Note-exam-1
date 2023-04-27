@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+      #chat-container {
+        width: 400px;
+        height: 500px;
+        border: 1px solid #ccc;
+        overflow-y: scroll;
+      }
+      #message-input {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container"></div>
+    <input type="text" id="message-input">
+    <button id="send-button">전송</button>
+
+    <script>  
+    const messages = [];
+
+function sendMessage() {
+  const messageInput = document.getElementById('message-input');
+  const message = messageInput.value;
+  messageInput.value = '';
+
+  messages.push({
+    type: 'sent',
+    message: message,
+  });
+
+  displayMessages();
+}
+
+function displayMessages() {
+  const chatContainer = document.getElementById('chat-container');
+  chatContainer.innerHTML = '';
+
+  for (const message of messages) {
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message.message;
+
+    if (message.type === 'sent') {
+      messageElement.style.textAlign = 'right';
+    }
+
+    chatContainer.appendChild(messageElement);
+  }
+}
+const sendButton = document.getElementById('send-button');
+sendButton.addEventListener('click', () => {
+  sendMessage();
+});
+
+    </script>
+  </body>
+</html>
